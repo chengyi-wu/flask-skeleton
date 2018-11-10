@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<script type="text/javascript">
+function cbKeypress(e) {
+    if(e.keyCode == 13) {
+        btnClick(e.target);
+    }
+}
+function btnClick(sender) {
+    console.log(sender.value);
+    sender.blur();
+}
+</script>
+<div class="div-container">
+    <div class="select" style="float:left;">
+        <select class="select-text" required>
+            <option selected disabled></option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+        <span class="select-highlight"></span>
+        <span class="select-bar"></span>
+        <label class="select-label">Select</label>
+    </div>
+    <div class="input-group">
+        <input class="input" type="text" required onkeypress="cbKeypress(event);">
+        <span class="input-highlight"></span>
+        <span class="input-bar"></span>
+        <label class="input-label">Value</label>
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <th colspan="2">Table header</th>
+        </tr>
+        <tr>
+            <td>(0, 0)</td>
+            <td>(0, 1)</td>
+        </tr>
+        <tr>
+            <td>(1, 0)</td>
+            <td>(1, 1)</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <a href="#" class="button blue">Calculate</a>
+</div>
+<div id='result'></div>
+{% endblock %}
