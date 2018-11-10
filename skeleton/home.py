@@ -8,4 +8,4 @@ bp = Blueprint('home', __name__)
 @bp.route('/home')
 @bp.route('/home/index')
 def index():
-    return render_template('home/index.html', msg="hello")
+    return render_template('home/index.html', msg="text area")

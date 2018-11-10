@@ -1,5 +1,9 @@
 {% extends 'layout.html' %}
 
+{% block title %}
+Home
+{% endblock %}
+
 {% block content %}
 <script type="text/javascript">
 function cbKeypress(e) {
@@ -25,11 +29,15 @@ function btnClick(sender) {
         <label class="select-label">Select</label>
     </div>
     <div class="input-group">
-        <input class="input" type="text" required onkeypress="cbKeypress(event);">
+        <input class="input" type="text" required onkeypress="cbKeypress(event);"/>
         <span class="input-highlight"></span>
         <span class="input-bar"></span>
         <label class="input-label">Value</label>
     </div>
+</div>
+
+<div>
+    <textarea>{{ msg }}</textarea>
 </div>
 
 <div>
@@ -48,7 +56,7 @@ function btnClick(sender) {
     </table>
 </div>
 <div>
-    <a href="#" class="button blue">Calculate</a>
+    <button href="#" class="button blue">Calculate</button>
 </div>
 <div id='result'></div>
 {% endblock %}
